@@ -24,7 +24,7 @@ const displayUser = () => {
   const allUsers = document.getElementById("all-users");
   arrayOfUsers.results.map((user) => {
     const li = document.createElement("li");
-   
+    li.id = "button";
     const source = user.picture.thumbnail;
     const img = document.createElement("img");
     img.src = source;
@@ -34,7 +34,7 @@ const displayUser = () => {
     );
 
     const btn = document.createElement("button");
-    const btnDisplay = document.createTextNode(`More Information`);
+    const btnDisplay = document.createTextNode("More Informatio");
     btn.onclick = displayInfo;
     btn.appendChild(btnDisplay);
     allUsers.append(btn);
@@ -45,12 +45,20 @@ const displayUser = () => {
 };
 const displayInfo = () => {
   arrayOfUsers.results.map((user) => {
-    
-    let list = document.getElementById("button");
+    const dispState = user.city.state;
+    const dispEmail = user.email;
+    const liId = document.getElementById("button");
     const userInfo = document.createTextNode(
       `City: ${dispState}, Email: ${dispEmail}`
     );
-    list.appendChild(userInfo);
-   
+    liId.appendChild(userInfo);
+    allUsers.append(li);
   });
 };
+
+/*
+Your job now is to follow the functions above and use them as templates
+ to build the functionality the buttons in the index.html file already
+ have laid out in it. This way you can learn how to build fetch requests
+ and work with other APIs and become a real developer!!
+*/
