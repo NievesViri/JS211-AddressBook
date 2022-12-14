@@ -24,7 +24,7 @@ const displayUser = () => {
   const allUsers = document.getElementById("all-users");
   arrayOfUsers.results.map((user) => {
     const li = document.createElement("li");
-    li.id = "button";
+   
     const source = user.picture.thumbnail;
     const img = document.createElement("img");
     img.src = source;
@@ -45,13 +45,12 @@ const displayUser = () => {
 };
 const displayInfo = () => {
   arrayOfUsers.results.map((user) => {
-    const dispState = user.city.state;
-    const dispEmail = user.email;
+    
     let list = document.getElementById("button");
     const userInfo = document.createTextNode(
       `City: ${dispState}, Email: ${dispEmail}`
     );
     list.appendChild(userInfo);
-    allUsers.append(li);
+   
   });
 };
